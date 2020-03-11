@@ -165,4 +165,9 @@ def signin():
             return render_template('dashboard.html',params=params,posts=posts)
     
     return render_template('signin.html',params=params)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html'), 404
+
 app.run(debug=True)
