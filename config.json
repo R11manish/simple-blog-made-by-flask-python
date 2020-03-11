@@ -1,0 +1,21 @@
+{
+"params":
+{
+    "local_server": "True",
+    "local_url":"mysql://root:@localhost/mani",
+    "prod_url":"mysql://root:@localhost/mani",
+    "fb_url":"https://facebook.com/rawatm946",
+    "tw_url":"https://twitter.com/rawatm539",
+    "gh_url":"https://github.com/githubjmtss",
+    "title":"manish ka blog",
+    "copyright":"manish ka blog",    
+    "gmail-user":"helloworld@gmail.com",
+    "gmail-password":"kya-bhyii",
+    "about-text":"Lor",
+    "no_of_post": 2,
+    "login_image":"m.jpg",
+    "admin_user":"hello-world",
+    "admin_password":"hello-world",
+    "upload_location":"c:\\users\\manish\\Desktop\\tutorial-flasky\\static\\pics"
+}
+}

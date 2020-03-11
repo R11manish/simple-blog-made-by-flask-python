@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename='img/home-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Manish ka Blog</h1>
+            <span class="subheading">WELCOME YOU ARE LOGGED IN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h2>Basic Action</h2>
+
+        <a href="/edit/0"><button class="btn btn-primary float-left" >Add a New post</button></a>
+        <hr>
+        <a href="/logout"><button class="btn btn-primary float-right" >Log out</button></a>
+        <hr>
+        <h5>upload A File</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+        <input type="file" name="file1" class="btn btn-primary">
+        <button type="sumbit" class="btn btn-primary">Sumbit</button>
+          
+        </form>
+        
+          <hr>
+        
+<!--idar for loop se data fetch karna wala hu teek ha na-->
+  <h2>YOUR DATA IS HERE</h2>         
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    {% for post in posts %}
+    <tbody>
+      <tr>
+        <td>{{post.sno}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.date}}</td>
+        <td><a href="/edit/{{post.sno}}"><button class="btn btn-primary float-right">Edit</button></a></td>
+        <td><a href="/delete/{{post.sno}}"><button class="btn btn-primary float-right">Delete</button></a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+        <!-- Pager -->
+       
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
